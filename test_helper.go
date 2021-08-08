@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -7,6 +9,9 @@ type ListNode struct {
 
 func arrayToList(a []int) *ListNode {
 	var next *ListNode
+	if len(a) == 0 {
+		return nil
+	}
 	if len(a) == 1 {
 		next = nil
 	} else {
@@ -40,6 +45,19 @@ func matchSlice(a1 []int, a2 []int) bool {
 		}
 	}
 	return true
+}
+
+func (l *ListNode) Show() {
+	fmt.Printf("[ %d ", l.Val)
+	tmp := l.Next
+	for {
+		if tmp == nil {
+			fmt.Println("]")
+			return
+		}
+		fmt.Printf("-> %d ", tmp.Val)
+		tmp = tmp.Next
+	}
 }
 
 func matchStringArray(a, b []string) bool {
