@@ -19,8 +19,6 @@ func Test_compinationSum(t *testing.T) {
 			target:     7,
 			expect:     [][]int{{2, 2, 3}, {7}},
 		},
-		// design
-		// []int's deep copy
 		{
 			name:       "2nd example",
 			candidates: []int{2, 3, 5},
@@ -38,7 +36,6 @@ func Test_compinationSum(t *testing.T) {
 			candidates: []int{8, 7, 4, 3},
 			target:     11,
 			expect:     [][]int{{8, 3}, {7, 4}, {4, 4, 3}},
-			// expect:     [][]int{{3, 4, 4}, {3, 8}, {4, 7}},
 		},
 	}
 
